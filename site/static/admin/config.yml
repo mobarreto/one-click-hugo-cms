@@ -5,6 +5,14 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "Vagas" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Vagas" # Used in the UI, ie.: "New Post"
+    folder: "site/content/vagas" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Data de Publicação", name: "data", widget: "datetime"}
+      - {label: "Descrição", name: "description", widget: "text"}
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
